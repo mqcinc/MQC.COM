@@ -1,0 +1,151 @@
+body {
+  background: rgba(0, 0, 0, 0.9);
+  margin: 0;
+  color: #ffffff;
+  font-family: "segoe UI", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.showcase::after {
+  content: "";
+  height: 100vh;
+  width: 100%;
+  background-image: url(assets/img/p1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  /* filter: blur(20px);
+            -webkit-filter: blur(20px); */
+  transition: all 500ms;
+}
+
+.content {
+  position: absolute;
+  z-index: 2;
+  top: 10%;
+  left: 10%;
+  margin-top: 105px;
+  margin-left: -145px;
+  width: 300px;
+  height: 350px;
+  text-align: center;
+  transition: all 500ms;
+}
+/* 
+.content .logo {
+  height: 180px;
+  width: 180px;
+}
+
+.content .title {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+}
+
+.content .text {
+  line-height: 1.7;
+  margin-top: 1rem;
+  color: #33b59f;
+  font-size: 1.5rem;
+} */
+
+.container {
+  max-width: 992px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2 {
+  display: grid;
+  grid-gap: 100px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-22 {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+.center1 {
+  text-align: center;
+  margin: auto;
+}
+
+.bg-light {
+  background: #f4f4f4;
+  color: black;
+}
+
+.bg-dark {
+  background: #b0b8b8;
+  color: black;
+}
+
+.fa-home {
+  color: #e54d26;
+}
+
+.fa-industry {
+  color: #565656;
+}
+
+.fa-building {
+  color: #2163af;
+}
+
+/* small screens*/
+@media (max-width: 560px) {
+  .showcase::after {
+    height: 50vh;
+  }
+
+  .container {
+    top: 10%;
+    margin-top: 5px;
+  }
+
+  .container .logo {
+    height: 140px;
+    width: 140;
+  }
+
+  .container .text {
+    display: none;
+  }
+
+  .grid-3,
+  .grid-2,
+  .grid-22 {
+    grid-template-columns: 1fr;
+  }
+
+  .services {
+    border-bottom: #333 dashed 1px;
+    padding: 1.2rem 1rem;
+  }
+}
+
+/**landscapr */
+@media (max-height: 500px) {
+  .content .text,
+  .content .title {
+    display: none;
+  }
+
+  .content {
+    top: 0;
+  }
+}

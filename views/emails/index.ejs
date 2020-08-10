@@ -1,0 +1,21 @@
+<%- include("../partials/header") %>
+
+<h1>this is email display page</h1>
+<% allEmails.forEach((data)=>{%>
+<div class="container">
+  <div class="col-md-9">
+    <p><em>name:</em> <%= data.name %></p>
+    <p><em>email:</em> <%= data.email %></p>
+    <p><em> subject:</em> <%= data.subject %></p>
+    <p><em>message:</em> <%= data.message %></p>
+    <form
+      class="delete-form"
+      action="/emails/<%= data._id %>?_method=DELETE"
+      method="POST"
+    >
+      <button class="btn btn-xs btn-danger">Dlete</button>
+    </form>
+    <br />
+  </div>
+</div>
+<%}); %> <%- include("../partials/footer") %>

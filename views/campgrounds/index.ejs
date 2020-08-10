@@ -1,0 +1,50 @@
+<%- include("../partials/header") %>
+
+<!-- <div class="container"> -->
+<header class="jumbotron">
+  <div class="container">
+    <h1>
+      <img id="img2" src="/img/logo_final.jpg" />
+      welcome to MQC inc.
+    </h1>
+    <p>view our best camps ground all over the planet earth!!!</p>
+    <% if(!currentUser){ %>
+    <a class="btn btn-primary btn-lg" href="/campgrounds/new">
+      Add new campground</a
+    >
+    <% } else { %> <%} %>
+  </div>
+</header>
+<div class="row">
+  <div class="col-md-3">
+    <p class="lead">MQC INC.</p>
+    <div class="list-group">
+      <li class="list-group-item active"><a href=""> About us</a></li>
+      <li class="list-group-item"><a href="/emails/new">contact us </a></li>
+      <li class="list-group-item"><a href="">our services</a></li>
+    </div>
+  </div>
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <!-- <div class="col-lg-12"> -->
+    <!-- <h3>our most popular campgrounds</h3> -->
+    <% campgrounds.forEach( (campground) => {%>
+    <div class="col-md-3 col-sm-6">
+      <div class="thumbnail">
+        <img src="<%= campground.image %>" />
+        <div class="caption">
+          <h4><%= campground.name %></h4>
+        </div>
+        <p>
+          <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">
+            More Info</a
+          >
+        </p>
+      </div>
+    </div>
+    <% }); %>
+    <!-- </div> -->
+  </div>
+  <!-- </div> -->
+</div>
+
+<%- include("../partials/footer") %>
